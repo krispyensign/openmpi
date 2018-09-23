@@ -7,7 +7,9 @@ RUN yum -y install wget\
                    gcc\
                    gcc-c++\
                    gcc-gfortran\ 
-                   make
+                   make\
+                   openssh\
+                   rsh
 
 WORKDIR /tmp
 

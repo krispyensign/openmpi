@@ -9,7 +9,8 @@ RUN yum -y install wget\
                    gcc-gfortran\ 
                    make\
                    openssh\
-                   rsh
+                   rsh\
+                   openssh-server
 
 WORKDIR /tmp
 

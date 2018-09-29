@@ -11,7 +11,8 @@ RUN yum -y install wget\
                    openssh\
                    rsh\
                    openssh-server\
-                   openssh-clients
+                   openssh-clients\
+                   bind-utils
 
 WORKDIR /tmp
 

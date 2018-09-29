@@ -11,6 +11,7 @@ RUN yum -y install wget\
                    openssh\
                    rsh\
                    openssh-server
+                   openssh-clients
 
 WORKDIR /tmp
 
@@ -32,3 +33,9 @@ RUN wget https://www.nas.nasa.gov/assets/npb/NPB3.3.1.tar.gz\
   && sed -i 's/MPICC = cc/MPICC = mpicc/g' config/make.def\
   && make ep NPROCS=8 CLASS=A\
   && make ep NPROCS=8 CLASS=C
+
+RUN /usr/sbin/sshd-keygen
+
+RUN mkdir -p ~/.ssh/ && chmod 700 ~/.ssh/
+
+WORKDIR /root
